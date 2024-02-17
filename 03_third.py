@@ -26,6 +26,19 @@ print(my_car.full_name()) #BMW X1
 
 
 
+# Inheritance
+class Eletric_Car(Car):
+    def __init__(self,brand , name, battery):
+        super().__init__(brand, name) #super() is used to access the parent class constructor , we can access any method of the parent class using super
+        self.battery = battery #this is the new variable for the child class
+
+    def full_name(self):
+        return self.brand + " " + self.name + " " + self.battery
 
 
+electic_car = Eletric_Car("Tesla", "Model S", "100kWh")
+print(electic_car.full_name()) #Tesla Model S 100kWh
 
+
+# Encapsulation
+# Encapsulation is the concept of restricting access to certain parts of the object.
