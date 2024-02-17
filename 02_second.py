@@ -24,3 +24,13 @@ def f3():
 
 action = f3()
 action() # 88
+
+
+# MORE BETTER EXAMPLE OF CLOUSERS
+def outer(num):
+    def inner(x):
+        return x**num
+    return inner
+
+square = outer(2)(4) # 4**2
+print(square) #16
