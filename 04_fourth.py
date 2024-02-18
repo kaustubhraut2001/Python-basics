@@ -32,3 +32,28 @@ def greet(name , msg = "Hey, Have a good day"):
     print(f"Hello {name} {msg}")
 
 greet("Rahul")
+
+
+
+
+def cache(fn):
+    cachevalue = {}
+    def wrapper(*args , **kwargs):
+
+        print("This is a cache function" , cachevalue)
+        if args in cachevalue:
+            return cachevalue[args]
+
+        res = fn(*args , **kwargs)
+        cachevalue[args] = res
+        return res
+    return wrapper
+
+
+@cache
+def long_running_function():
+    print("This is a long running function")
+    time.sleep(5)
+    return 5
+
+print(long_running_function())
