@@ -99,4 +99,21 @@ print(c2.cartype()) #Electric Car
 print(car.total) #3
 
 
+#static methods
+# this is avalable to the class butnot available to the object of the class
+
+class car:
+    def __init__(self, name):
+        self.name = name
+
+    def general_description(self):
+        return "This is a car"
+
+    @staticmethod
+    def static_method():
+        return "This is a static method"
+
+c1 = car("BMW")
+print(c1.general_description()) #This is a car
+print(car.static_method()) #This is a static method As we can not able to access the static metod with c1 we needs to use car for it to access it.
 
