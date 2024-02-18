@@ -48,10 +48,10 @@ class student:
         self.__marks = marks
     
     def get_name(self):
-        return self.__name
+        return self.__name #why we use __name because we want to restrict the access of the variable to the outside world
     
     def get_marks(self):
-        return self.__marks
+        return self.__marks #__ means private variable no other can accss it only the class can access it an its function
     
     def set_name(self, name):
         self.__name = name
@@ -67,3 +67,36 @@ s1.set_name("Rohan")
 s1.set_marks(100)
 print(s1.get_name()) #Rohan
 print(s1.get_marks()) #100
+
+
+# Polymorphism 
+class car:
+
+    total=0
+    def __init__(self, name):
+        self.name = name
+        car.total += 1 
+        #self.total = car.total #this is the class variable
+
+    def cartype(self):
+        return "Disel Car"
+    
+
+class electric_car(car):
+    def __init__(self, name, battery):
+        super().__init__(name)
+        self.battery = battery
+        car.total += 1
+
+
+    def cartype(self):
+        return "Electric Car"
+
+c1 = car("BMW")
+c2 = electric_car("Tesla", "100kWh")
+print(c1.cartype()) #Disel Car
+print(c2.cartype()) #Electric Car
+print(car.total) #3
+
+
+
