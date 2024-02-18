@@ -42,3 +42,28 @@ print(electic_car.full_name()) #Tesla Model S 100kWh
 
 # Encapsulation
 # Encapsulation is the concept of restricting access to certain parts of the object.
+class student:
+    def __init__(self ,name , marks):
+        self.__name = name
+        self.__marks = marks
+    
+    def get_name(self):
+        return self.__name
+    
+    def get_marks(self):
+        return self.__marks
+    
+    def set_name(self, name):
+        self.__name = name
+    
+    def set_marks(self, marks):
+        self.__marks = marks
+
+
+s1= student("Rahul", 90)
+print(s1.get_name()) #Rahul
+print(s1.get_marks()) #90
+s1.set_name("Rohan")
+s1.set_marks(100)
+print(s1.get_name()) #Rohan
+print(s1.get_marks()) #100
