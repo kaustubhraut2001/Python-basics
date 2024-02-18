@@ -109,11 +109,78 @@ class car:
     def general_description(self):
         return "This is a car"
 
-    @staticmethod
+    @staticmethod #this is a decorator to make the method static
+    # def static_method(self): #we can not use self keyword here as it is a static method
     def static_method():
         return "This is a static method"
 
 c1 = car("BMW")
 print(c1.general_description()) #This is a car
+print(c1.general_description())
 print(car.static_method()) #This is a static method As we can not able to access the static metod with c1 we needs to use car for it to access it.
 
+
+# Deecorators
+# Decorators are used to modify the behavior of function or class method
+class car:
+    def __init__(self, name , model):
+        self.name = name
+        self.__model = model
+
+    def general_description(self):
+        return "This is a car"
+
+
+    @property #this decorator is used to make the method as a property this willnot change the method to property but it will change the way to access the method
+    def get_model(self):
+        return self.__model
+
+    @staticmethod
+    def static_method():
+        return "This is a static method"
+
+    @classmethod
+    def class_method(cls): #cls is used to access the class variable
+        return cls
+
+c1 = car("BMW", "X1")
+print(c1.general_description()) #This is a car
+print(c1.general_description())
+
+
+
+# class inheritance and isInstance
+class car:
+    def __init__(self, name , model):
+        self.name = name
+        self.__model = model
+
+
+class electric_car(car):
+    def __init__(self, name, model, battery):
+        super().__init__(name, model)
+        self.battery = battery
+
+    
+
+c1 = car("BMW", "X1")
+c2 = electric_car("Tesla", "Model S", "100kWh")
+isinstance(c1, car) #True
+isinstance(c2, car) #True
+
+
+# Multiple inheritance
+class battery:
+    def __init__ (self, battery):
+        self.battery = battery
+
+    
+class Engine:
+    def __init__(self, engine):
+        self.engine = engine
+
+    
+class electric_car(battery, Engine):
+    def __init__(self, battery, engine):
+        self.battery = battery
+        self.engine = engine
