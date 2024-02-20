@@ -49,7 +49,6 @@ def view_videos():
 
 
 
-
 def main():
     print("Welcome to the Youtube Video Manager")
     print("1. Add a video")
@@ -58,7 +57,7 @@ def main():
     print("4. View all videos")
     print("5. Exit")
 
-    choice = int(input("Enter your choice: "))
+    choice = (input("Enter your choice: "))
     print(choice)
     if choice == "1":
         add_video()
