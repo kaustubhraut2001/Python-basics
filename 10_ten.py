@@ -19,7 +19,7 @@ print(id(b), id(c))
 # static method
 #
 class Student:
-	school = "asdasd"
+	school = "Sample School"
 	def __init__(self , *args):
 		self.m1 = args[0]
 		self.m2 = args[1]
@@ -34,12 +34,20 @@ class Student:
 	def set_m1(self, value):
 		self.m1 = value
 
+	@classmethod
+	def info(self):
+		return Student.school
+
+	@staticmethod
+	def info():
+		print("Info function static method")
 
 s1 = Student(10, 20, 30)
 s2 = Student(40, 50, 60)
 
 print(s1.avg())
 print(s2.avg())
+print(Student.info())
 
 # Accersoes andd Mutators Methods
 # on fetching values we use Accessors
