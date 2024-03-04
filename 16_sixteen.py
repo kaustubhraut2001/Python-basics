@@ -19,10 +19,13 @@ print(values.__next__())
 #  Multi threading
 
 from  threading import *
+from time import sleep
+
 class Hello(Thread):
 	def run(self):
 		for i in range(5):
 			print("Hello")
+			sleep(1)
 
 
 
@@ -31,6 +34,7 @@ class Hi(Thread):
 	def run(self):
 		for i in range(5):
 			print("Hi")
+			sleep(1)
 
 
 
@@ -38,4 +42,11 @@ t1 = Hello()
 t2 = Hi()
 
 t1.start()
+sleep(0.2)
 t2.start()
+
+print("Bye") # this is executed by main thread
+
+t1.join() # main thread will wait for t1 to complete
+
+t2.join() # main thread will wait for t2 to complete
