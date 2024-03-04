@@ -27,7 +27,7 @@ nums = [8,7,6,5,4]
 
 it = iter(nums)
 
-#why we use it
+#why we use it -> Iterators in Python enable efficient, simplified code syntax for large datasets. They generate data on-the-fly, abstract collection traversal for code modularity, employ lazy evaluation, and are reusable. Many Python objects are iterators, and you can create custom ones using classes or generator functions.
 
 #print(it.__next__())
 #print(it.__next__())
